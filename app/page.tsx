@@ -5,7 +5,6 @@ export default async function Home() {
   return (
     <main>
       <LoginPage />
-      <SignupPage />
       Home
     </main>
   )
