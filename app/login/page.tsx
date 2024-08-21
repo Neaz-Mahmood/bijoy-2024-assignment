@@ -7,8 +7,8 @@ import { SubmitHandler, useForm } from 'react-hook-form'
 import { Input } from '../components/Input'
 
 export interface IFormValues {
-  Email: string
-  Password: string
+  email: string
+  password: string
 }
 
 export default function LoginPage() {
@@ -19,7 +19,7 @@ export default function LoginPage() {
   const onSubmit: SubmitHandler<IFormValues> = (data) => {
     console.log(data)
     toast.success('Login success')
-    router.push('/profile')
+    router.push('/home')
   }
   const onLogin = async () => {
     try {
@@ -27,7 +27,7 @@ export default function LoginPage() {
       // const response = await axios.post('/api/users/login', user)
 
       toast.success('Login success')
-      router.push('/profile')
+      router.push('/home')
     } catch (error: any) {
       console.log('Login failed', error.message)
       toast.error(error.message)
@@ -46,6 +46,7 @@ export default function LoginPage() {
           className='p-2 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:border-gray-600 text-black'
           register={register}
           required
+          name='email'
           placeholder='email'
         />
         <Input
@@ -53,6 +54,7 @@ export default function LoginPage() {
           className='p-2 border border-gray-300 rounded-lg mb-4 focus:outline-none focus:border-gray-600 text-black'
           register={register}
           required
+          name='password'
           type='password'
           placeholder='password'
         />

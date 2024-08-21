@@ -3,7 +3,7 @@ import axios from 'axios'
 import { use, useEffect, useState } from 'react'
 import toast from 'react-hot-toast'
 
-const Profile = () => {
+const Home = () => {
   const [loading, setLoading] = useState(false)
   const [data, setData] = useState([])
   const getData = async () => {
@@ -71,4 +71,4 @@ const Profile = () => {
   )
 }
 
-export default Profile
+export default Home
